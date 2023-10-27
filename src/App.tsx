@@ -5,13 +5,13 @@ function App() {
     const [count, setCount] = useState(0);
     const [todos, setTodos] = useState(["First todo"]);
 
-    const increment = function() {
+    const increment = useCallback(function() {
         setCount((c) => c + 1);
-    };
+    }, []);
 
-    const addTodo = function() {
+    const addTodo = useCallback(function() {
         setTodos((t) => [...t, "New Todo"]);
-    };
+    }, []);
 
   return (
     <div style={{width: "100%", marginTop: 300}}>
